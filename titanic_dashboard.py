@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title = "Titanic Data Insights", layaout = "wide")
+st.set_page_config(page_title = "Titanic Data Insights", layout = "wide")
 st.title("Titanic Passanger Dashboard")
 st.markdown("Explore the demographics and survival rates of passengers")
 
@@ -43,7 +43,7 @@ st.divider()
 row2_col1, row2_col2 = st.columns(2)
 with row2_col1:
     st.subheader("Survival Count by Gender")
-    fig_sex = px.histgram(
+    fig_sex = px.histogram(
         filtered_df,
         x = 'Sex',
         color = 'Survived',
@@ -58,4 +58,4 @@ with row2_col2:
     st.plotly_chart(fig_age, use_container_width= True , config = {'staticPlot': False})
 
 st.subheader("Raw Data Header")
-st.dataframe(filtered_df.head(10), width= "Stretch")
+st.dataframe(filtered_df.head(10), width= "stretch")
