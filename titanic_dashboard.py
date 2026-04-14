@@ -40,7 +40,7 @@ with col3:
     st.metric("Average Fare", f"${avg_fare:.2f}")
 
 st.divider()
-row2_col1, row2_col2 
+row2_col1, row2_col2 = st.columns(2)
 with row2_col1:
     st.subheader("Survival Count by Gender")
     fig_sex = px.histgram(
